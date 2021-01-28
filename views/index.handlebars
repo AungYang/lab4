@@ -27,18 +27,28 @@
 			<p>human-computer interaction &middot; social computing &middot; crowdsourcing</p>
 		</div>
 
+		<ol>
+			{{#each projects}}
+			<li><a href="#project{{id}}">{{name}}</a></li>
+			{{/each}}
+		</ol>
+
 
 		<h4>Projects</h4>
 		<!-- divs are invisible structuring elements that stack vertically by default. Use them to organize your code -->
 		<!-- img tags are images. Lorem Pixel will deliver random images; handy! -->
 		<!-- a are anchors, also known as hyperlinks. Use the href attribute to tell the browser where to go when the user clicks -->
-		<div class="project" id="project1">
+		{{#each projects}}
+		<div class="project" id="{{id}}">
 			<a href="project.html" class="thumbnail">
-				<img src="images/lorempixel.people.1.jpeg" alt="Lorem Pixel image" class="img">
-				<p>Waiting in Line</p>
+				<img src="images/{{image}}" alt="Lorem Pixel image" class="img">
+				<p>{{name}}</p>
 			</a>
 		</div>
-		<div class="project" id="project2">
+		{{/each}}
+
+
+		{{!-- <div class="project" id="project2">
 			<a href="project.html" class="thumbnail">
 				<img src="images/lorempixel.city.1.jpeg" alt="Lorem Pixel image" class="img">
 				<p>Needfinding</p>
@@ -79,7 +89,7 @@
 				<img src="images/lorempixel.city.2.jpeg" alt="Lorem Pixel image" class="img">
 				<p>Design tools</p>
 			</a>
-		</div>
+		</div> --}}
 	</div>
 
 	<script src="https://code.jquery.com/jquery.js"></script>
